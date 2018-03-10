@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,11 +13,61 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SnapchatClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snapchat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlW-bD-j1a">
+                                <rect key="frame" x="129.5" y="27" width="117" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Pr-mb-URd">
+                                <rect key="frame" x="20" y="66" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCJ-l0-DCT">
+                                <rect key="frame" x="20" y="114" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vL4-vb-IVW">
+                                <rect key="frame" x="169" y="152" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlr-5x-cVd">
+                                <rect key="frame" x="178" y="190" width="19" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5D-gE-Qi6">
+                                <rect key="frame" x="125" y="219" width="125" height="30"/>
+                                <state key="normal" title="Switch To Sign Up"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WlW-bD-j1a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="11l-pr-QsA"/>
+                            <constraint firstItem="vL4-vb-IVW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2mt-f4-r3o"/>
+                            <constraint firstItem="2Pr-mb-URd" firstAttribute="top" secondItem="WlW-bD-j1a" secondAttribute="bottom" constant="7.5" id="7Qy-B3-BB2"/>
+                            <constraint firstItem="UCJ-l0-DCT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7bu-lD-LhS"/>
+                            <constraint firstItem="mlr-5x-cVd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="87i-di-KNa"/>
+                            <constraint firstItem="mlr-5x-cVd" firstAttribute="top" secondItem="vL4-vb-IVW" secondAttribute="bottom" constant="8" id="8rv-kg-0Jv"/>
+                            <constraint firstItem="v5D-gE-Qi6" firstAttribute="top" secondItem="mlr-5x-cVd" secondAttribute="bottom" constant="8" id="EgX-Ro-j09"/>
+                            <constraint firstItem="UCJ-l0-DCT" firstAttribute="top" secondItem="2Pr-mb-URd" secondAttribute="bottom" constant="18" id="J1X-ZC-4DF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UCJ-l0-DCT" secondAttribute="trailing" constant="20" id="XgI-Hs-GT5"/>
+                            <constraint firstItem="vL4-vb-IVW" firstAttribute="top" secondItem="UCJ-l0-DCT" secondAttribute="bottom" constant="8" id="YyO-Lz-X2g"/>
+                            <constraint firstItem="WlW-bD-j1a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="dbu-Pf-BZF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Pr-mb-URd" secondAttribute="trailing" constant="20" id="gPD-9a-ZPn"/>
+                            <constraint firstItem="v5D-gE-Qi6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kDD-1f-lK5"/>
+                            <constraint firstItem="2Pr-mb-URd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nDY-hY-bif"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
