@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class PicsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionTextField: UITextField!
     
+    var imageName = "\(NSUUID().uuidString).jpeg"
+    var imageURL = ""
     var imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
@@ -38,7 +41,35 @@ class PicsViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func nextTapped(_ sender: Any) {
+        let imageFolder = Storage.storage().reference().child("images")
+        
+        if let image = imageView.image {
+            if let imageData = UIImageJPEGRepresentation(image, 0.1) {
+                imageFolder.child(imageName).putData(imageData, metadata: nil, completion: { (metadata, error) in
+                    if let error = error {
+                        print(error)
+                    } else {
+                        
+                        if let imageURL = metadata?.downloadURL()?.absoluteString {
+                            self.imageURL = imageURL
+                            
+                            self.performSegue(withIdentifier: "addImageToSelectUser", sender: nil)
+                        }
+                        
+                    }
+                })
+            }
+        }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let sentTVC = segue.destination as? SentToTableViewController {
+            sentTVC.imageURL = imageURL
+            sentTVC.imageName = imageName
+            if let message = descriptionTextField.text {
+                sentTVC.message = message
+            }
+        }
+    }
     
 }

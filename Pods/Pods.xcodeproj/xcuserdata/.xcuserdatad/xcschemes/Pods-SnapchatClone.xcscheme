@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '39F300EC6D1CFFE6C7B36A1104AEEC6E'
+               BlueprintIdentifier = 'B760EA38BB86B61C4CC9861378BAAE7A'
                BlueprintName = 'Pods-SnapchatClone'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods-SnapchatClone.framework'>

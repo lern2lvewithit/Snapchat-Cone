@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class AuthViewController: UIViewController {
     
@@ -17,12 +18,12 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var bottomButton: UIButton!
     
     var loginMode = true
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     @IBAction func topTapped(_ sender: Any) {
         
         if let email = emailTextField.text {
@@ -33,7 +34,6 @@ class AuthViewController: UIViewController {
                         if let error = error {
                             print(error)
                         } else {
-                            print("Login Successful")
                             self.performSegue(withIdentifier: "authToSnaps", sender: nil)
                         }
                     })
@@ -43,8 +43,9 @@ class AuthViewController: UIViewController {
                         if let error = error {
                             print(error)
                         } else {
-                            print("Sign Up Successful")
-                            self.performSegue(withIdentifier: "authToSnaps", sender: nil)
+                            if let user = user {  Database.database().reference().child("users").child(user.uid).child("email").setValue(email)
+                                self.performSegue(withIdentifier: "authToSnaps", sender: nil)
+                            }
                         }
                     })
                 }
@@ -67,6 +68,6 @@ class AuthViewController: UIViewController {
         }
     }
     
-
+    
 }
 
